@@ -76,5 +76,5 @@ module.exports = async function() {
     `${migrationsFolder}/committed/${newMigrationFileName}`,
     newMigrationContent
   )
-  await writeCurrentMigration({}, currentMigrationPath, "\n");
+  await writeCurrentMigration({}, currentLocation, "\n");
 }
