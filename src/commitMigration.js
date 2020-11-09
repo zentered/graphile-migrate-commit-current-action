@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { parseMigrationText, getAllMigrations, serializeMigration } = require('graphile-migrate/dist/migration')
-const { readCurrentMigration, getCurrentMigrationLocation } = require('graphile-migrate/dist/current')
+const { readCurrentMigration, getCurrentMigrationLocation, writeCurrentMigration } = require('graphile-migrate/dist/current')
 const { sluggify } = require('graphile-migrate/dist/sluggify')
 const { calculateHash }  = require('graphile-migrate/dist/hash')
 const omit = require('lodash/omit')
@@ -76,4 +76,5 @@ module.exports = async function() {
     `${migrationsFolder}/committed/${newMigrationFileName}`,
     newMigrationContent
   )
+  await writeCurrentMigration({}, currentLocation, "\n");
 }
