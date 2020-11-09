@@ -1,0 +1,32 @@
+{
+  "name": "graphile-migrate-commit-current-action",
+  "private": false,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "^12"
+  },
+  "author": "Zentered <hi@zentered.co> (https://zentered.co)",
+  "contributors": [
+    "Jan Hagelauer (https://github.com/jan-san)"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "graphile-migrate": "^1.0.2",
+    "lodash": "^4.17.20"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
+  }
+}
